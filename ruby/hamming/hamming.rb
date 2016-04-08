@@ -3,8 +3,8 @@ class Hamming
   def self.compute(strand1, strand2)
     raise ArgumentError if strand1.length != strand2.length
     difference = 0
-    for i in 0..strand1.length
-      if strand1[i] != strand2[i]
+    strand1.each_char.with_index do | char, index |
+      if strand2[index] != char
         difference += 1
       end
     end
