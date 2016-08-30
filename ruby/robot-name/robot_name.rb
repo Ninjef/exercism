@@ -18,7 +18,7 @@ class Robot
 
   def generate_name
     begin
-      @name = (0..1).map { (65 + rand(25)).chr }.join << (100 + rand(899)).to_s
+      @name = (0..1).map { (65 + rand(25)).chr }.join << (rand(9)).to_s << (rand(9)).to_s << (rand(9)).to_s
     end until !@@taken_names.include?(@name)
     @@taken_names << @name
   end
